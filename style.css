@@ -1,0 +1,1574 @@
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+    /* border: .5px solid #000; */
+}
+
+#wrapper{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+/* ========================================CSS Header======================================== */
+header#header{
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    display: grid;
+    grid-template-columns: .5fr 3fr 1fr .1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    align-items: center;
+    transition: .6s;
+    padding: 10px 20px;
+    z-index: 10000;
+
+}
+    header.sticky{
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1.5fr;
+        grid-auto-rows: minmax(min-content, max-content);
+        align-items: center !important; 
+        transition: .6s;
+        min-height: 10%;
+        max-height: 10%;
+        background: rgba(255, 255, 255, .94);
+
+        -webkit-box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+        -moz-box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+        box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+
+        animation: smoothScroll 1s forwards;
+    }
+
+    @keyframes smoothScroll {
+        0% {
+          transform: translateY(-50px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+    }
+
+    #header .logo_header{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header.sticky .logo_header{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 50px;
+    }
+        #header .logo_header img{
+            width: 200px;
+            height: 70px;
+        }
+
+        header.sticky .logo_header img{
+            width: 150px !important;
+            height: 50px !important;
+        }
+    #header #header_nav{
+        font-weight: 500;
+        transition: .5s;
+
+        
+    }
+        #header #header_nav .menu{
+            display: flex;
+            padding: 5px;
+            position: relative;
+            text-transform: uppercase;
+            justify-content: flex-end;
+            transition: .5s;
+
+        }
+            #header #header_nav .menu .menu__item{
+                list-style: none;
+                margin: 0 15px;
+            }
+            #header #header_nav .menu .menu__item a:before{
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                right: 0;
+                bottom: 0;
+                background: #000;
+                transition: .5s;
+            }
+            #header #header_nav .menu .menu__item.active a:before{
+                width: 100%;
+                left: 0;
+            }
+                #header_nav .menu .menu__item.active a{
+                    /* text-decoration: solid #000 !important; */
+
+                }
+                .menu__item a{
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    letter-spacing: 1px;
+                    font-weight: 500px;
+                    transition: .5s;
+                    display: block;
+                }
+    #header #download-app{
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transition: .3s;
+
+    }
+        header.sticky #download-app{
+            height: 50px !important;
+        }
+        #header #download-app .download-btn{
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 10px 30px;
+            background: #008eaf;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        #header #download-app .app-store{
+            display: flex;
+            padding: 5px;
+            width: 90%;
+            justify-content: space-between;
+        }
+            #header #download-app .app-store img{
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+            }
+
+        #header #download-app .disable-app{
+            display: none;
+            transition: .5s;
+        }
+    #bugger{
+        display: none;
+        background-image: url("./Final/menu.png");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+        #bugger.nav-active{
+            background-image: url("./Final/close.png");
+            background-size: 25px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+/*========================================End CSS Header========================================   */
+
+/* ========================================CSS introduce======================================== */
+section#introduce{
+    position: relative;
+    min-width: 100%;
+    min-height: 100px;
+    height: 700px;
+    background: url("./Final/background/1.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+
+    display: grid;
+    grid-template-rows: .8fr 1.4fr .7fr .4fr;
+}   
+    .introduce__slogan{
+        width: 48%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+    }
+        .introduce__slogan .introduce__slogan--first{
+            display: flex;
+            align-items: flex-end;
+        }
+            .introduce__slogan .introduce__slogan--first img{
+                width: 500px;
+            }
+        .introduce__slogan .introduce__slogan--second{
+            display: flex;
+            align-items: flex-start;
+        }
+            .introduce__slogan div span{
+                border-radius: 5p;
+                color: #fff;
+                background: #4b4c4c;
+                padding: 15px;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+    .introduce__fn{
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+        .introduce__fn .introduce__fn--trial,
+        .introduce__fn .introduce__fn--intro{
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .introduce__fn .introduce__fn--trial{
+            background: #008eaf;
+            border: none;
+        }
+        .introduce__fn .introduce__fn--intro{
+            border: 1px solid #008eaf;
+            color: #008eaf;
+            margin-left: 10px;
+        }
+
+    .introduce__contact{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .introduce__contact img{
+            
+            width: 70px;
+            height: 70px;
+        }
+        .introduce__contact .introduce__contact--text{
+            padding: 10px;
+        }
+            .introduce__contact .introduce__contact--text p, 
+            .introduce__contact .introduce__contact--text span{
+                font-weight: bold;
+                font-size: 25px;
+            }
+            .introduce__contact .introduce__contact--text .phone{
+                font-weight: bolder;
+                font-size: 30px;
+                display: inline-block;
+                padding: 0px 5px;
+            }
+
+
+/* ========================================End CSS introduce======================================== */
+
+/* ========================================CSS Reason========================================  */
+section#reason{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/2.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+
+    display: grid;
+    grid-template-rows: .3fr 1fr;
+}
+    #reason .reason__title{
+        text-transform: uppercase;
+        color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        padding: 30px 0 30px 0;
+    }
+    #reason .reason__list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        
+        color: #fff;
+        padding: 0px 0 40px 0;
+
+    }
+        #reason .reason__list .reason__list--detail{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            #reason .reason__list .reason__list--detail div{
+                height: 100%;
+                width: 70%;
+                position: relative;
+                line-height: 1.5;
+            }
+                #reason .reason__list .reason__list--detail div:after{
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    left: -15px;
+                    height: 105%;
+                    width: 2px;
+                    background: #fff;
+                    border-radius: 5px;
+                }
+                #reason .reason__list .reason__list--detail div h4{
+                    margin-top: 5px;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    color: #f9ff00;
+                }
+/* ========================================End CSS Reason======================================== */
+
+/* ========================================CSS About-us========================================  */
+section#about-us{
+    height: 100%;
+    margin-top: 20px;
+}
+    #about-us .about-us__title{
+        color: #008eaf;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        padding: 30px 0 30px 0;
+    }
+        #about-us .about-us__menu ul{
+            display: flex;
+            justify-content: space-around;
+            text-transform: uppercase;
+            padding: 15px;
+        }
+            .about-us__menu ul li{
+                list-style: none;
+                border-radius: 2px;
+                background: #008eaf;
+                color: #fff;
+                padding: 15px 6%;
+            }
+                .about-us__menu ul li:nth-child(1){
+                    border: 1px solid #000;
+                    background: #fff;
+                    color: #000;
+                }
+    #about-us .about-us__content{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: .4fr 1fr;
+    }  
+        #about-us .about-us__content .about-us__content--img{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+            #about-us .about-us__content img{
+                width: 50%;
+                height: 100%;
+            } 
+
+        #about-us .about-us__content .about-us__content--main{ 
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: center;
+        }   
+            #about-us .about-us__content .about-us__content--main .img-hidden{
+                display: none;
+            }
+            #about-us .about-us__content .about-us__content--main span{
+                line-height: 1.5;
+                font-weight: 800;
+            }
+            #about-us .about-us__content .about-us__content--main .img-store{
+                display: flex;
+                height: 20%;
+                align-items: center;
+            }
+                .about-us__content .about-us__content--main .img-store #app-store,
+                .about-us__content .about-us__content--main .img-store #google-play
+                {
+                    width: 100px;
+                    height: 30px;
+                    margin-left: 1%;
+                }
+
+/* ========================================End CSS About-us========================================  */
+
+/* ========================================CSS Video========================================  */
+section#video{
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+    #video .video__title{
+        color: #008eaf;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        padding: 30px 0 30px 0;
+    }
+
+    #video .video__content{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr .6fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+        #video .video__content .video__content--item{
+            border-radius: 2px;
+            background: #008eaf !important;
+        }
+        #video .video__content .video-item1{
+            background: red;
+            grid-row: 1 / 4;
+
+        }
+        #video .video__content .video-item2{
+            background: blue;
+            height: 150px;
+            grid-row: 1 /2.5;
+        }
+        #video .video__content .video-item3{
+            background: green;
+            grid-row: 1 /2.5;
+
+        }
+        #video .video__content .video-item4{
+            background: 1px yellow;
+            
+        }
+/* ========================================End CSS Video========================================  */
+
+/* ========================================CSS Trial========================================  */
+section#trial{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/5.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+    font-weight: 500;
+}
+    #trial .trial__download,
+    #trial .trial__sign-in,
+    #trial .trial__learn,
+    #trial .trial__upgrade{
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 2% 5%;
+        border-bottom: 2px solid #fff;
+        font-weight: 600;
+    }
+        #trial .trial__download--step-1,
+        #trial .trial__sign-in--step-1,
+        #trial .trial__learn--step-1,
+        #trial .trial__upgrade--step-1
+        {
+            color: #fff;
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        #trial .trial__download--step-2,
+        #trial .trial__sign-in--step-2,
+        #trial .trial__learn--step-2,
+        #trial .trial__upgrade--step-2
+        {
+            padding: 1% 2% 0 2%;
+        }
+
+    #trial .trial__title{
+        color: #fff;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        padding: 30px 0 30px 0;
+    }
+    #trial .trial__download{
+            background: #eaf4f2;
+    }
+        #trial .trial__download--step-1{
+                color: #008aef;
+        }
+        #trial .trial__download--step-2 a{
+                font-weight: 900;
+                color: #000;
+                display: inline-block;
+        }
+        #trial .trial__download--step-2 .link_responsive, #trial .trial__upgrade .link_responsive{
+                font-weight: 900;
+                color: #000;
+                display: none;
+                text-decoration: none;
+                font-size: 20px;
+                color: #008aef;
+        }
+    #trial .trial__sign-in{
+        padding: 2% 5%;
+        position: relative;
+    }
+        #trial .trial__sign-in img{
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            width: 20%;
+        }
+    #trial .trial__upgrade{
+        border-bottom: none;
+        position: relative;
+    }
+        #trial .trial__upgrade .trial__upgrade--tutorial{
+            color: #fff;
+            display: inline-block;
+            font-size: 25px;
+            padding: 3% 1% 0 1%;
+        }
+        #trial .trial__upgrade .link-tutorial{
+            color: #000;
+        }
+        #trial .trial__upgrade .signin-hidden{
+            width: 20%;
+            display: none;
+        }
+/* ========================================End CSS Trial========================================  */
+
+/* ========================================CSS People think========================================  */
+section#people-think{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/3.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+}
+    #people-think .people-think__title{
+        color: #008aef;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        padding: 30px 10px 30px 10px;
+    }
+    #people-think .people-think__img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        #people-think .people-think__img img{
+            width: 17%;
+            height: 17%;
+        }
+        #people-think .people-think__img p{
+            font-size: 30px;
+            font-weight: 800;
+        }
+        #people-think .people-think__content div{
+            /* border: 1px solid #000; */
+            width: 50%;
+            margin: 0 auto;
+            padding: 0 0 5% 0;
+        }
+            #people-think .people-think__content div .span-1{
+                /* border: 1px solid #000; */
+                font-size: 50px;
+                font-weight: bold;
+            }
+            #people-think .people-think__content div .span-2{
+                /* border: 1px solid #000; */
+                /* display: block; */
+                font-weight: 600;
+                font-size: 20px;
+            }
+/* ========================================End CSS People think========================================  */
+
+/* ========================================CSS News========================================  */
+section#news{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/3.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+}
+    #news .news__title{
+        color: #008aef;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        padding: 30px 0 30px 0;
+    }
+    #news .news__content{
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2% 0 5% 0;
+    }
+        #news .news__content .news__content--img{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+            #news .news__content .news__content--img img{
+                width: 80%;
+                
+            }
+        #news .news__content .news__content--img-2{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+            #news .news__content .news__content--img-2 .news__content--button{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                width: 78%;
+                padding: 7% 0 0 0;
+            }
+                #news .news__content .news__content--img-2 .news__content--button div{
+                    border-radius: 2px;
+                    height: 5px;
+                    width: 22%;
+                    background: #acb6b7;
+                }
+                    #news .news__content .news__content--img-2 .news__content--button div:nth-child(1){
+                        background: #535656;
+                    }
+/* ========================================End CSS News========================================  */
+
+/* ========================================CSS Question and Answer========================================  */
+section#QnA{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/10.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+}
+    #QnA .QnA__title{
+        color: #008aef;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        padding: 30px 0 30px 0;
+    }
+    #QnA .QnA__content{
+        /* border: 1px solid #000; */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 85%;
+        margin: 0 auto;
+        height: 100%;
+        padding: 0 0 10% 0;
+    }
+        #QnA .QnA__content .QnA__content--left p,
+        #QnA .QnA__content .QnA__content--right p{
+        padding: 1%;
+        line-height: 2;
+    }
+    #QnA .QnA__slide{
+        /* border: 1px solid #000; */
+        display: flex;
+        justify-content: space-between;
+        /* align-items: flex-start; */
+        width: 20%;
+        padding: 0 0 7% 0;
+        margin: 0 auto;
+    }
+        #QnA .QnA__slide div{
+            border-radius: 2px;
+            height: 5px;
+            width: 23%;
+            background: #acb6b7;
+        }
+            #QnA .QnA__slide div:nth-child(1){
+                background: #535656;
+            }
+/* ========================================End CSS Question and Answer========================================  */
+
+/* ========================================CSS Advisory========================================  */
+section#advisory{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background: url("./Final/background/9.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+}
+    #advisory .advisory__title{
+        color: #fff;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 25px;
+        text-align: center;
+        padding: 2% 0 0 0;
+    }
+    #advisory .advisory__form, #advisory .hidden{
+        width: 80%;
+        margin: 0 auto;
+        padding: 5%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+        #advisory .advisory__form .advisory__form-infor{
+            display: flex;
+            flex-direction: column;
+        }
+            #advisory .advisory__form .advisory__form-infor p{
+                height: 200%;
+                display: flex;
+                align-items: center;
+                color: #008aef;
+                font-weight: 800;
+                padding: 5% 0 4% 0;
+                font-size: 1.5rem;
+
+            }
+        #advisory .advisory__form .advisory__form-input{
+            height: 91%;
+            display: grid;
+            grid-gap: 5%;
+        } 
+            #advisory .advisory__form .advisory__form-input input{
+                border: none;
+                outline: none;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                position: relative;
+                color: #000;
+                font-weight: 800;
+                font-size: 1.5rem;
+                border-bottom: 4px solid #dbe2e1;
+            }
+                
+
+    #advisory .advisory__contact{
+        padding: 2%;
+        color: #fff;
+        text-align: center;
+        font-size: 2em;
+    }
+        #advisory .advisory__contact .advisory__contact--phone{
+            font-size: 1.45em;
+        }
+            #advisory .advisory__contact .advisory__contact--phone span{
+                color: #efff3f;
+                font-weight: 900;
+            }
+
+/* ========================================End CSS Advisory========================================  */
+
+/* ========================================CSS Footer========================================  */
+footer#footer{
+    /* border: 1px solid #000; */
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    background: url("./Final/background/8.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-blend-mode: screen;
+    background-position: center center;
+}
+    #footer .footer__title{
+        color: #008aef;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-size: 30px;
+        text-align: center;
+        padding: 2% 0 0 0;
+    }
+    #footer .footer__infor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2%;
+    }
+            #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__title{
+                text-transform: uppercase;
+                font-weight: 900;
+                padding: 2% 2% 2% 10%;
+                font-size: 1rem;
+                width: 70%;
+                height: 20%;
+                text-align: left;
+                display: flex;
+                align-items: flex-end;
+            }
+                #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content div{
+                    display: flex;
+                    padding: 1%;
+                }
+                    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content div img{
+                        width: 8%;
+                    }
+                    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content div p{
+                        display: flex;
+                        align-items: center;
+                        padding-left: 3%;
+                    }
+
+
+        #footer .footer__infor .footer__infor--branch{
+            display: flex;
+            flex-direction: column;
+            padding: 2%;
+        }
+            #footer .footer__infor .footer__infor--branch .footer__infor--branch__title{
+                text-transform: uppercase;
+                font-weight: 900;
+                padding: 2% 2% 2%;
+                font-size: 1rem;
+                width: 90%;
+                text-align: left;
+                align-self: flex-end;
+            }
+                #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div{
+                    display: flex;
+                    padding: 2%;
+                }
+                    #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div img{
+                        width: 8%;
+                    }
+                    #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div p{
+                        display: flex;
+                        align-items: center;
+                        font-weight: 500;
+                        padding-left: 3%;
+                    }
+
+/* ========================================End CSS Footer========================================  */
+
+
+
+/* -----------------------------------Responsive----------------------------------- */
+/* Responsive nav */
+@media screen and (max-width: 1210px){
+    header#header{
+        width: 100%;
+        display: grid;
+        grid-template-columns: .5fr 3fr 1fr;
+        grid-auto-rows: minmax(min-content, max-content);
+        transition: .6s;
+    }
+
+        #header .logo_header img{
+            width: 130px;
+            height: 50px;
+        }
+        #header #header_nav .menu{
+            display: flex;
+            justify-content: flex-end;
+            width: 70;
+        }
+        #header #download-app{
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            transition: .3s;
+            width: 100%;
+        }
+}
+@media screen and (max-width: 1140px){
+    header#header{
+        width: 100%;
+        display: grid;
+        grid-template-columns: .5fr 3fr 1fr;
+        transition: .6s;
+    }
+    #header #header_nav{
+        font-size: 15px;
+    }   
+
+}
+@media screen and (max-width: 1100px){
+    section#introduce{
+        background: url("./Final/background/1.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-blend-mode: screen;
+        background-position: center center;
+    }
+    header#header{
+        display: grid;
+        grid-template-columns: .5fr 3fr 1fr;
+        grid-auto-rows: minmax(min-content, max-content);
+        align-content: center;
+    }
+
+        #header .logo_header img{
+            width: 130px;
+            height: 50px;
+        }
+
+        #header #header_nav .menu{
+            display: flex;
+            padding: 0;
+            justify-content: flex-end;
+        }
+        #header #download-app .download-btn{
+            padding: 8px 15px;
+            background: #008eaf;
+            color: #fff;
+            text-transform: uppercase;
+        }
+            #header #download-app .app-store{
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 2px;
+                    padding: 2px;
+                    justify-content: center;
+                    /* border: 1px solid #000; */
+            }
+            #header #download-app .disable-app{
+                    display: none;
+                    transition: .5s;
+            }
+        
+}
+@media screen and (max-width: 720px){
+    #header #header_nav, header #header_nav{
+        /* border: 1px solid red; */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        height: 900%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: .2s;
+        /* background: rgba(0,0,0,.95) !important; */
+        display: none;
+    }
+        #header #header_nav .menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* font-size: 1.5em; */
+            font-weight: 300;
+            transition: .5s;
+        }
+            #header #header_nav .menu a:hover{
+                color: #015b75;
+                letter-spacing: 2px;
+            }
+    
+    #header #download-app .app-store{
+            display: flex;
+            padding: 2px;
+            align-content: center;
+    }
+        #header #download-app .disable-app{
+                display: none;
+                transition: .5s;
+        }
+
+    #header #bugger{
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid #000; */
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50%;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #header #header_nav.nav-active{
+        display: block;
+        background: rgba(255,255,255,1);
+        -webkit-box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+        -moz-box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+        box-shadow: 1px 2px 11px -6px rgba(0,0,0,1);
+    }
+        #header #header_nav.nav-active .menu__item{
+            padding: 20px 0;
+            font-weight: bold;
+        }
+
+    section#introduce{
+        background: url("./Final/background/1.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-blend-mode: screen;
+        background-position: center;
+    }
+}
+/* End responsive nav */
+/* =================================================================================== */
+/* Responsive introduce */
+@media screen and (max-width: 1112px){
+    .introduce__fn{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+        .introduce__fn .introduce__fn--trial,
+        .introduce__fn .introduce__fn--intro{
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            margin-left: 3px;
+        }
+}
+@media screen and (max-width: 1075px){
+    .introduce__slogan{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+    }
+        .introduce__slogan .introduce__slogan--first{
+            display: flex;
+            align-items: flex-start;
+        }
+            .introduce__slogan .introduce__slogan--first img{
+                background: rgba(255,255,255,.9);
+                width: 450px;
+            }
+        .introduce__slogan .introduce__slogan--second{
+            display: flex;
+            align-items: flex-start;
+        }
+            .introduce__slogan .introduce__slogan--second span{
+                width: 100%;
+                text-align: center;
+                border-radius: 5p;
+                color: #fff;
+                background: #4b4c4c;
+                padding: 10px;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+    
+    
+    .introduce__contact{
+        width: 40%;
+        display: flex;
+        justify-content: flex-start;
+    }
+        .introduce__contact img{
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+        }
+            .introduce__contact .introduce__contact--text p, 
+            .introduce__contact .introduce__contact--text span{
+                font-size: 20px;
+            }
+            .introduce__contact .introduce__contact--text .phone{
+                font-size: 25px;
+            }
+}
+@media screen and (max-width: 885px){
+    .introduce__contact{
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+        .introduce__contact img{
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+        }
+            .introduce__contact .introduce__contact--text{
+                padding: 0;
+            }
+                .introduce__contact .introduce__contact--text p, 
+                .introduce__contact .introduce__contact--text span{
+                    align-self: flex-end;
+                    font-size: 15px;
+                }
+                .introduce__contact .introduce__contact--text .phone{
+                    font-size: 20px;
+                }
+}
+@media screen and (max-width: 700px){
+    header#header{
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+    section#introduce{
+        display: grid;
+        grid-template-rows: 1.5fr 1fr 1fr 4fr;
+    }   
+
+    .introduce__slogan{
+        width: 100%;
+        display: grid;
+        grid-template-rows: .7fr 1fr;
+    }
+            .introduce__slogan .introduce__slogan--first img{
+                width: 350px;
+            }
+            .introduce__slogan .introduce__slogan--second span{
+                font-size: 15px;
+            }
+
+    .introduce__fn{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+        .introduce__fn .introduce__fn--trial,
+        .introduce__fn .introduce__fn--intro{
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 15px;
+        }
+        .introduce__fn .introduce__fn--trial{
+            margin-left: 60px;
+        }
+    .introduce__contact{
+        width: 100%;
+    }
+        .introduce__contact img{
+            margin-left: 60px;
+            width: 60px;
+            height: 60px;
+        }
+            .introduce__contact .introduce__contact--text p, 
+            .introduce__contact .introduce__contact--text span{
+                font-size: 17px;
+            }
+            .introduce__contact .introduce__contact--text .phone{
+                font-size: 23px;
+            }
+
+}
+/* End responsive introduce */
+/* =================================================================================== */
+/* Responsive reason */
+@media screen and (max-width: 815px){
+    section#reason{
+        display: grid;
+        grid-template-rows: .3fr 1fr;
+    }
+        #reason .reason__title{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            align-items: center;
+        }
+        #reason .reason__list{
+            display: flex;
+            flex-direction: column;
+            
+        }
+                #reason .reason__list .reason__list--detail div::before{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    height: 2px;
+                    width: 100%;
+                    background: #fff;
+                    border-radius: 5px;
+                }
+                #reason .reason__list .reason__list--detail div:after{
+                    content: none;
+                }
+                    #reason .reason__list .reason__list--detail div p{
+                        margin-bottom: 5%;
+                    }
+           
+}
+/* End responsive reason */
+/* =================================================================================== */
+/* Responsive about us */
+@media screen and (max-width: 1035px){
+            #about-us .about-us__content img{
+                width: 50%;
+                height: 90%;
+            } 
+                #about-us .about-us__content .about-us__content--main span{
+                    line-height: 1.5;
+                    font-weight: 800;
+                    font-size: 15px;
+                }
+
+}
+@media screen and (max-width: 870px){
+    #about-us .about-us__content img{
+        width: 60%;
+        height: 90%;
+    } 
+}
+@media screen and (max-width: 840px){
+    .about-us__menu ul li{
+        font-size: 15px;
+        color: #fff;
+        padding: 1% 5%;
+    }
+}
+@media screen and (max-width: 785px){
+    #about-us .about-us__content img{
+        width: 70%;
+        height: 90%;
+    } 
+}
+@media screen and (max-width: 726px){
+    #about-us .about-us__title{
+        text-align: center;
+    }
+        #about-us .about-us__menu ul{
+            padding: 10px;
+        }
+            .about-us__menu ul li{
+                font-size: 15px;
+                color: #fff;
+                padding: 2% 2%;
+            }
+    #about-us .about-us__content{
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }  
+        #about-us .about-us__content .about-us__content--main{
+            padding: 10% 1% 5% 5%;   
+            background: rgba(0,0,0,.05);
+        }
+            #about-us .about-us__content .about-us__content--main .img-hidden{
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 30%;
+                z-index: -1;
+                opacity: .3;
+            }   
+        #about-us .about-us__content .about-us__content--img{
+            display: none;
+        }
+}
+@media screen and (max-width: 600px){
+    #about-us .about-us__content .about-us__content--main .img-hidden{
+        height: 100%;
+        width: 40%;
+    }   
+}
+/* End responsive about us */
+/* =================================================================================== */
+/* Responsive Trial*/
+@media screen and (max-width: 1126px){
+    #trial .trial__download--step-2 a{
+        font-weight: 900;
+        color: #000;
+        display: block;
+    }
+    #trial .trial__upgrade .link-tutorial{
+        color: #000;
+        display: block;
+        padding: 1%;
+    }
+}
+@media screen and (max-width: 915px){
+    #trial .trial__sign-in img{
+        right: 0;
+    }
+    #trial .trial__download--step-2 a{
+        font-weight: 900;
+        color: #000;
+        padding: 0;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+    
+}
+@media screen and (max-width: 800px){
+    #trial .trial__sign-in img{
+        top: 200%;
+        width: 15%;
+    }
+}
+@media screen and (max-width: 625px){
+    #trial .trial__sign-in img{
+        top: 250%;
+        width: 15%;
+    }
+    #trial .trial__upgrade .trial__upgrade--step-2 p{
+       /* border: 1px solid #000; */
+       width: 90%;
+    }
+    #trial .trial__download--step-2 .link_responsive{
+        display: inline;
+        /* border: 1px solid #000; */
+        /* height: 100%; */
+        padding-left: 2%;
+    }
+    
+    #trial .trial__download--step-2 .link_normal{
+        display: none;
+    }
+    
+    #trial .trial__upgrade .link-tutorial   {
+        display: none;
+    }
+    #trial .trial__upgrade .link_responsive{
+        display: block;
+        color: #000;
+        padding-left: 1%;
+        text-decoration: red !important;
+    }
+}
+@media screen and (max-width: 500px){
+    #trial .trial__sign-in img{
+        display: none;
+    }
+    #trial .trial__upgrade .signin-hidden{
+        display: block;
+        position: absolute;
+        right: -5%;
+        top: 10%;
+        bottom: 0;
+    }
+    
+}
+/* End responsive trial*/
+
+/*Responsive Q&A*/
+@media screen and (max-width: 723px){
+    #QnA .QnA__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        padding: 0 0 0 0;
+    }
+}
+/*End responsive Q&A*/
+
+/*Responsive advisory*/
+@media screen and (max-width: 800px){
+    #advisory .advisory__form .advisory__form-infor p{
+        font-size: 1.1rem;
+    }
+    #advisory .advisory__form .advisory__form-input input{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 650px){
+    #advisory .advisory__form{
+        display: flex;
+    }
+    #advisory .unhidden{
+        display: none;
+    }
+    #advisory .hidden{
+        
+        display: block !important;
+        margin-top: 5% ;
+    }
+    #advisory .div-hidden{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+        #advisory .hidden p{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #008aef;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        #advisory .hidden input{
+            margin: 0 auto;
+            width: 80%;
+            border: none;
+            outline: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: #000;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 2%;
+            border-bottom: 4px solid #dbe2e1;
+        }
+    #advisory .advisory__contact{
+        font-size: 1.45em;
+    }
+}
+/*End responsive advisory*/
+
+/*Responsive footer*/
+@media screen and (max-width: 1070px){
+    #footer .footer__infor{
+        grid-template-columns: .5fr 1fr;
+    }
+    #footer .footer__infor .footer__infor--branch{
+        padding: 5%;
+    }
+}
+@media screen and (max-width: 862px){
+    #footer .footer__infor .footer__infor--branch{
+        padding: 0%;
+    }
+}
+@media screen and (max-width: 785px){
+    #footer .footer__infor{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+        #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__title{
+            margin: auto;
+            width: 100%;
+            justify-content: flex-start;
+            padding-left: 0;
+        }
+            #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content{
+                display: flex;
+                flex-wrap: wrap;
+            }
+                #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content div{
+                    width: 50%;
+                    margin: 0 auto; 
+                }
+
+
+        #footer .footer__infor .footer__infor--branch{
+            width: 80%;
+        }
+}
+@media screen and (max-width: 652px){
+    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content{
+        padding-bottom: 5%;
+    }
+    #footer .footer__infor .footer__infor--branch{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 585px){
+    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content{
+        padding-bottom: 5%;
+    }
+    #footer .footer__infor .footer__infor--branch{
+        width: 100%;
+        padding: 0 0 2% 0;
+    }
+}
+@media screen and (max-width: 540px){
+    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__title{
+        margin: auto;
+        width: 90%;
+    }
+    #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5%;
+    }
+        #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content div{
+            width: 95%;
+            margin: 0 auto; 
+        }
+}
+@media screen and (max-width: 525px){
+    #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div p{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        padding:0;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 490px){
+    #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div img{
+        width: 10%;
+        height: 10%;
+    }
+}
+/*End responsive footer*/
+
+/*Responsive News*/
+@media screen and (max-width: 750px){
+    .left-slide, .right-slide{
+        display: block !important;
+        width: 20%;
+        height: 20%;
+        position: absolute;
+    }
+}
+/*End responsive news*/
+
+/* **********News làm carousel và responsive */
