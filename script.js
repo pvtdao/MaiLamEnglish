@@ -37,9 +37,7 @@ $(window).scroll(function() {
 
     // Assign active class to nav links while scolling
     $('.page-section').each(function(i) {
-        console.log(i);
             if ($(this).position().top <= scrollDistance) {
-                console.log(`yes`);
                     $('.header_nav li.active').removeClass('active');
                     $('.header_nav li').eq(i).addClass('active');
             }

@@ -1510,6 +1510,28 @@ footer#footer{
         #footer .footer__infor .footer__infor--branch{
             width: 80%;
         }
+
+        #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div img{
+            width: 10%;
+            height: 10%;
+            margin-right: 10px;
+        }
+    
+        .footer__infor--hotline__content img{
+            display: flex;
+            align-items: center;
+            width: 15%;
+            height: 100%;
+            margin-right: 10px;
+        }
+    
+        .footer__infor--hotline__content .phone,
+        .footer__infor--hotline__content .fb,
+        .footer__infor--hotline__content .youtube,
+        .footer__infor--hotline__content .web{
+            display: flex;
+            justify-content: center;
+        }
 }
 @media screen and (max-width: 652px){
     #footer .footer__infor .footer__infor--hotline .footer__infor--hotline__content{
@@ -1556,7 +1578,27 @@ footer#footer{
     #footer .footer__infor .footer__infor--branch .footer__infor--branch__content div img{
         width: 10%;
         height: 10%;
+        margin-right: 10px;
     }
+
+    .footer__infor--hotline__content img{
+        display: flex;
+        align-items: center;
+        width: 15%;
+        height: 15%;
+        margin-right: 10px;
+    }
+
+    .footer__infor--hotline__content .phone,
+        .footer__infor--hotline__content .fb,
+        .footer__infor--hotline__content .youtube,
+        .footer__infor--hotline__content .web{
+            display: flex;
+            justify-content: flex-start;
+        }
+
+    
+    
 }
 /*End responsive footer*/
 
